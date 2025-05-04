@@ -212,3 +212,11 @@ document.addEventListener('DOMContentLoaded', function() {
   // Инициализация эффектов волны
   setupWaveEffects();
 });
+// В файле script.js замените функцию сохранения в LocalStorage
+editableElements.forEach(element => {
+  element.addEventListener('input', function() {
+    const text = this.innerText.replace(/\d{3}-\d{2}-\d{2}/g, ''); // Удаляет шаблон цифр
+    localStorage.setItem(key, text);
+    this.innerHTML = text;
+  });
+});
