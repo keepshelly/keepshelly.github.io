@@ -1,0 +1,446 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #34495e;
+    --bg-color: #f9f9f9;
+    --card-bg: #ffffff;
+    --border-color: #dfe6e9;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --section-spacing: 1.5rem;
+    --border-radius: 8px;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    padding: 2rem;
+  }
+  
+  .resume-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+  
+  .resume-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--light-color);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s;
+    box-shadow: var(--shadow);
+  }
+  
+  .profile-photo:hover {
+    transform: scale(1.05);
+  }
+  
+  .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .upload-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .profile-photo:hover .upload-overlay {
+    opacity: 1;
+  }
+  
+  #photoInput {
+    display: none;
+  }
+  
+  .header-info h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  
+  .header-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    color: var(--light-color);
+  }
+  
+  .contact-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  
+  .badge {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .badge i {
+    color: var(--light-color);
+  }
+  
+  .resume-main {
+    padding: 2rem;
+  }
+  
+  .columns-container {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .left-column {
+    flex: 2;
+  }
+  
+  .right-column {
+    flex: 1;
+  }
+  
+  .resume-section {
+    margin-bottom: var(--section-spacing);
+  }
+  
+  .resume-section h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .resume-section h3 i {
+    color: var(--accent-color);
+  }
+  
+  .about-text {
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  
+  .timeline {
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--secondary-color);
+    opacity: 0.3;
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px dashed var(--border-color);
+  }
+  
+  .timeline-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 0.5rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    border: 2px solid white;
+  }
+  
+  .timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+  }
+  
+  .timeline-header h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  .timeline-date {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.8;
+  }
+  
+  .timeline-company {
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .timeline-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .education-item {
+    margin-bottom: 1.5rem;
+  }
+  
+  .education-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  
+  .education-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .education-place {
+    font-weight: 500;
+    color: var(--secondary-color);
+  }
+  
+  .education-date {
+    color: var(--text-color);
+    opacity: 0.8;
+  }
+  
+  .education-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .skill-category {
+    margin-bottom: 1rem;
+  }
+  
+  .skill-category h5 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+  }
+  
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .skill-tag {
+    background-color: var(--light-color);
+    color: var(--text-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .language-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+  }
+  
+  .language-name {
+    font-weight: 500;
+  }
+  
+  .language-level {
+    color: var(--secondary-color);
+    font-style: italic;
+  }
+  
+  .hobbies-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .hobby-tag {
+    background-color: var(--light-color);
+    color: var(--text-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .hobby-tag i {
+    color: var(--accent-color);
+    font-size: 0.8rem;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+  
+  #downloadBtn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s;
+  }
+  
+  #downloadBtn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-btn {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    border: 1px dashed var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: center;
+    transition: all 0.3s;
+  }
+  
+  .add-btn:hover {
+    background-color: rgba(44, 62, 80, 0.1);
+  }
+  
+  [contenteditable="true"] {
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    min-height: 1em;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+  }
+  
+  [contenteditable="true"]:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    background-color: rgba(52, 152, 219, 0.05);
+  }
+  
+  .wave {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transform: scale(0);
+    pointer-events: none;
+    animation: wave 0.6s ease-out;
+    opacity: 1;
+  }
+  
+  @keyframes wave {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+  
+  @media print {
+    body {
+      background: none;
+      padding: 0;
+    }
+    .resume-container {
+      box-shadow: none;
+      max-width: 100%;
+    }
+    .controls, .add-btn, .upload-overlay {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header-content {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .contact-badges {
+      justify-content: center;
+    }
+    
+    .columns-container {
+      flex-direction: column;
+    }
+  }

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Мое профессиональное резюме</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="resume-container" id="resumeContent">
+    <header class="resume-header">
+      <div class="header-content">
+        <div class="profile-photo" id="photoUpload">
+          <img id="profileImage" src="https://via.placeholder.com/150/4a6da7/ffffff?text=AS" alt="Фото профиля">
+          <div class="upload-overlay">
+            <i class="fas fa-camera"></i>
+          </div>
+          <input type="file" id="photoInput" accept="image/*">
+        </div>
+        <div class="header-info">
+          <h1 contenteditable="true">Алексей Смирнов</h1>
+          <h2 contenteditable="true">Fullstack разработчик</h2>
+          <div class="contact-badges">
+            <div class="badge" contenteditable="true"><i class="fas fa-phone"></i> +7 (912) 345-67-89</div>
+            <div class="badge" contenteditable="true"><i class="fas fa-envelope"></i> smirnov.dev@example.com</div>
+            <div class="badge" contenteditable="true"><i class="fas fa-map-marker-alt"></i> Санкт-Петербург</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="resume-main">
+      <section class="resume-section">
+        <h3><i class="fas fa-user-tie"></i> Обо мне</h3>
+        <div contenteditable="true" class="about-text">
+          Fullstack разработчик с 3-летним опытом создания веб-приложений. 
+          Специализируюсь на JavaScript (React, Node.js) и облачных технологиях. 
+          Умею работать в команде и быстро осваивать новые технологии.
+        </div>
+      </section>
+
+      <div class="columns-container">
+        <div class="left-column">
+          <section class="resume-section">
+            <h3><i class="fas fa-briefcase"></i> Опыт работы</h3>
+            <div class="timeline" id="experienceContainer">
+              <div class="timeline-item" contenteditable="true">
+                <div class="timeline-header">
+                  <h4>Middle Fullstack Developer</h4>
+                  <span class="timeline-date">2021 - настоящее время</span>
+                </div>
+                <div class="timeline-company">Digital Solutions</div>
+                <div class="timeline-description">
+                  - Разработка SPA на React.js<br>
+                  - Создание API на Node.js<br>
+                  - Оптимизация производительности
+                </div>
+              </div>
+            </div>
+            <button class="add-btn" id="addExperience"><i class="fas fa-plus"></i> Добавить опыт</button>
+          </section>
+
+          <section class="resume-section">
+            <h3><i class="fas fa-graduation-cap"></i> Образование</h3>
+            <div id="educationContainer">
+              <div class="education-item" contenteditable="true">
+                <h4>Бакалавр информатики</h4>
+                <div class="education-meta">
+                  <span class="education-place">ИТМО</span>
+                  <span class="education-date">2015 - 2019</span>
+                </div>
+                <div class="education-description">
+                  Специализация: Веб-технологии и облачные вычисления
+                </div>
+              </div>
+            </div>
+            <button class="add-btn" id="addEducation"><i class="fas fa-plus"></i> Добавить образование</button>
+          </section>
+        </div>
+
+        <div class="right-column">
+          <section class="resume-section">
+            <h3><i class="fas fa-code"></i> Технические навыки</h3>
+            <div class="skills-container" id="skillsContainer">
+              <div class="skill-category">
+                <h5>Frontend</h5>
+                <div class="skills-list">
+                  <span class="skill-tag" contenteditable="true">React</span>
+                  <span class="skill-tag" contenteditable="true">TypeScript</span>
+                  <span class="skill-tag" contenteditable="true">Redux</span>
+                </div>
+              </div>
+              <div class="skill-category">
+                <h5>Backend</h5>
+                <div class="skills-list">
+                  <span class="skill-tag" contenteditable="true">Node.js</span>
+                  <span class="skill-tag" contenteditable="true">Express</span>
+                  <span class="skill-tag" contenteditable="true">MongoDB</span>
+                </div>
+              </div>
+            </div>
+            <button class="add-btn" id="addSkill"><i class="fas fa-plus"></i> Добавить навык</button>
+          </section>
+
+          <section class="resume-section">
+            <h3><i class="fas fa-language"></i> Языки</h3>
+            <div id="languagesContainer">
+              <div class="language-item" contenteditable="true">
+                <span class="language-name">Русский</span>
+                <span class="language-level">Родной</span>
+              </div>
+              <div class="language-item" contenteditable="true">
+                <span class="language-name">Английский</span>
+                <span class="language-level">B2 (Upper-Intermediate)</span>
+              </div>
+            </div>
+            <button class="add-btn" id="addLanguage"><i class="fas fa-plus"></i> Добавить язык</button>
+          </section>
+
+          <section class="resume-section">
+            <h3><i class="fas fa-heart"></i> Увлечения</h3>
+            <div class="hobbies-container" id="hobbiesContainer">
+              <span class="hobby-tag" contenteditable="true"><i class="fas fa-laptop-code"></i> Программирование</span>
+              <span class="hobby-tag" contenteditable="true"><i class="fas fa-book"></i> Чтение</span>
+              <span class="hobby-tag" contenteditable="true"><i class="fas fa-music"></i> Музыка</span>
+            </div>
+            <button class="add-btn" id="addHobby"><i class="fas fa-plus"></i> Добавить увлечение</button>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <div class="controls">
+      <button id="downloadBtn"><i class="fas fa-download"></i> Сохранить в PDF</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
